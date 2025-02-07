@@ -15,7 +15,7 @@ let currentRoomId;
 
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: "*",
         methods: ["GET", "POST"],
     }
 });
@@ -47,7 +47,6 @@ app.get('/', (req, res) => {
 });
 
 PORT = 3001
-
 
 server.listen(process.env.PORT || PORT, () => {
     console.log(`Server Listening on ${PORT}`);
